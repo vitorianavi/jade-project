@@ -2,18 +2,21 @@ from video_processing import Video
 import websockets
 import asyncio
 import pickle
+import logging
+import time
 
-video = Video('pole_demonst.mp4')
+video = Video('dancer3.mp4')
 video_data_raw = video.read_raw()
 
+logging.basicConfig(level=logging.INFO)
+
 async def run():
-    async with websockets.connect('ws://10.72.84.227:8081/dmx') as websocket:
-        # for frame in video_data_raw:
-        #     data = pickle.dumps(frame)
-        #     res = await websocket.send(data)
-        #     print(res)
-        #     break
-        res = await websocket.send(bytearray([255,33,22,255,0,200]))
-        print(res)
+    async with websockets.connect('ws://localhost:8080/poseframe', ping_interval=None) as websocket:
+        await websocket.send("start".encode())
+        start_time = time.time()
+        for frame in video_data_raw:
+            await websocket.send(frame)
+        end_time = time.time()
+        print("Processing time: {}".format(end_time-start_time))
             
 asyncio.run(run())

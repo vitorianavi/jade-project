@@ -1,6 +1,7 @@
 import tensorflow as tf
 
 import cv2
+import base64
 
 class Video(object):
     def __init__(self, origin_path=None, frame_data=None) -> None:
@@ -39,9 +40,11 @@ class Video(object):
         i = 0
         ret, frame = self.src.read()
         while(ret and i < need_length):
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            # compressing for faster transport
+            _, buffer = cv2.imencode('.jpg', frame)
+            encoded_frame = base64.b64encode(buffer)
             
-            yield frame
+            yield encoded_frame
             ret, frame = self.src.read()
             i += 1
 
