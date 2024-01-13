@@ -5,7 +5,7 @@ import pickle
 import logging
 import time
 
-video = Video('dancer3.mp4')
+video = Video('resources/dancer3.mp4')
 video_data_raw = video.read_raw()
 
 logging.basicConfig(level=logging.INFO)
