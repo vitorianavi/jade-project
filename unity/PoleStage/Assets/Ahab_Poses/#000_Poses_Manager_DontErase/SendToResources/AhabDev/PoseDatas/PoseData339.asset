@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ee058b403dd314795c1a2be412c3a0, type: 3}
+  m_Name: PoseData339
+  m_EditorClassIdentifier: 
+  AlreadySet: 1
+  animatorController: {fileID: 9100000, guid: e33a550c266a0b149845226d56693f4e, type: 2}
+  AvatarPosition: {x: 0, y: -0.7, z: 0}
+  AvatarRotation: {x: -0, y: -0, z: -0, w: 1}
+  Tags:
+  - FRIENDS
+  - LAYING
+  UsesAProp: 0
+  poseProp: {fileID: 0}
+  PropPosition: {x: 0, y: 0, z: 0}
+  PropRotation: {x: 0, y: 0, z: 0, w: 0}
+  PropSize: {x: 0, y: 0, z: 0}
+  currentNecessaryAvatars: 2
+  PoseData2: {fileID: 11400000, guid: 9a76135dba26b3444988390df76ccba9, type: 2}
+  PoseData3: {fileID: 11400000, guid: b86400ce24472154998cd9c7cb205940, type: 2}
+  PoseData4: {fileID: 0}
